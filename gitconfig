@@ -1,0 +1,15 @@
+[alias]
+	st = status
+	stat = status
+	ci = commit
+	com = commit
+	br = branch -v
+	co = checkout
+	df = diff
+	lg = log -p
+	glog = log --oneline --decorate=full --abbrev=10 --all --graph
+	where = name-rev --tags --name-only HEAD
+	wcp = whatchanged -p
+	sm = submodule
+[push]
+	default = current
