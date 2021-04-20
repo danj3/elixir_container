@@ -16,7 +16,7 @@ Clone the repo and build the image
 ```
 $ git clone https://github.com/danj3/elixir_container.git
 $ cd elixir_container
-$ sudo chmod +x run build 
+$ chmod +x run build 
 $ ./build
 ```
 
