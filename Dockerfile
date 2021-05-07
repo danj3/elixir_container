@@ -9,9 +9,10 @@ RUN apk add ca-certificates
 
 RUN adduser -D elixir
 USER elixir
-COPY gitconfig /home/elixir/.gitconfig
-COPY bashrc /home/elixir/.bashrc
-ENV IMG elixir_util
+ADD --chown=1000:1000 gitconfig /home/elixir/.gitconfig
+ADD --chown=1000:1000 bashrc /home/elixir/.bashrc
+
+ENV IMG elixir-util
 
 WORKDIR /home/elixir/src
 
