@@ -6,11 +6,15 @@ RUN apk add git less
 RUN apk add tzdata
 RUN cp /usr/share/zoneinfo/America/New_York /etc/localtime && echo "America/New_York" >  /etc/timezone && apk del tzdata
 RUN apk add ca-certificates
+RUN apk add g++ make
 
 RUN adduser -D elixir
 USER elixir
 ADD --chown=1000:1000 gitconfig /home/elixir/.gitconfig
 ADD --chown=1000:1000 bashrc /home/elixir/.bashrc
+
+RUN mix local.hex --force
+RUN mix local.rebar --force
 
 ENV IMG elixir-util
 

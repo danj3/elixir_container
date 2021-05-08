@@ -1,1 +1,1 @@
-docker run --env VD=$(pwd) --rm -it -v $(pwd):/home/elixir/src elixir-util
+docker run --env VD=$(pwd) --rm -it -v $(pwd):/home/elixir/src $OPTIONS elixir-util "$@"
