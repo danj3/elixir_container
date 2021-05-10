@@ -8,6 +8,8 @@ RUN cp /usr/share/zoneinfo/America/New_York /etc/localtime && echo "America/New_
 RUN apk add ca-certificates
 RUN apk add g++ make
 
+RUN apk add openssh-client sqlite
+
 RUN adduser -D elixir
 USER elixir
 ADD --chown=1000:1000 gitconfig /home/elixir/.gitconfig
