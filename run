@@ -1,11 +1,20 @@
 #!/bin/sh
 
+if [ -f $HOME/.gitconfig ]; then
+    G="-v $HOME/.gitconfig:/home/elixir/.gitconfig"
+else
+    G=""
+fi
+
 docker run \
-  --env VD=$(pwd) \
-  --rm \
-  -it \
-  -v $(pwd):/home/elixir/src \
-  -v $HOME/.ssh:/home/elixir/.ssh \
-  $OPTIONS \
-  elixir-util \
-  "$@"
+       --name ${NAME:-elixir-util} \
+       -p ${PORT_ALT:-4000}:4000 \
+       --env VD=$(pwd) \
+       --rm \
+       -it \
+       $G \
+       -v $(pwd):/home/elixir/src \
+       -v $HOME/.ssh:/home/elixir/.ssh \
+       $OPTIONS \
+       elixir-util \
+       "$@"

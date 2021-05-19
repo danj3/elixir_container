@@ -17,10 +17,13 @@ ADD --chown=1000:1000 bashrc /home/elixir/.bashrc
 
 RUN mix local.hex --force
 RUN mix local.rebar --force
+RUN mix archive.install --force hex phx_new 1.5.9
 
 ENV IMG elixir-util
 
 WORKDIR /home/elixir/src
+
+EXPOSE 4000
 
 VOLUME [ "/home/elixir/src" ]
 CMD /bin/bash
