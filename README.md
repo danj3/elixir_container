@@ -5,11 +5,6 @@ A more usable elixir container setup for development.
 
 ## Setup
 Make sure you have the latest version of Docker installed.
-Create a src/ directory in your home folder (this will be where the volume is bound)
-
-```
-$ mkdir ~/src/
-```
 
 Clone the repo and build the image
 
@@ -21,6 +16,7 @@ $ ./build
 ```
 
 That's it! Use `$ ./run` to create a container with a volume attatched. 
+Files in the container's directory will show up under `~/src` in the docker container when it's running. 
 
 
 ## Troubleshooting
